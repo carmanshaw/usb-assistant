@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="50dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_deviceList"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="@string/deviceList" />
+
+            <Spinner
+                android:id="@+id/spDeviceList"
+                android:layout_width="450dp"
+                android:layout_height="88dp" />
+
+            <Button
+                android:id="@+id/btn_init"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:onClick="onBtnClick"
+                android:text="@string/connect"
+                android:textAllCaps="false" />
+
+            <TextView
+                android:id="@+id/tv_version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_receive"
+                android:layout_width="800dp"
+                android:layout_height="150dp"
+                android:layout_weight="4"
+                android:background="@drawable/et_margin_line"
+                android:enabled="false"
+                android:inputType="textMultiLine"
+                android:scrollbars="vertical"
+                android:textColor="#E91E63" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/cb_isrtxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/receiveTxt"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/btn_clear_receive"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="onBtnClick"
+                    android:text="@string/clearReceiveBuf"
+                    android:textAllCaps="false" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_send"
+                android:layout_width="800dp"
+                android:layout_height="500dp"
+                android:layout_weight="4"
+                android:background="@drawable/et_margin_line"
+                android:inputType="textMultiLine"
+                android:scrollbars="vertical" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/cb_isstxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/receiveTxt" />
+
+                <Button
+                    android:id="@+id/btn_clear_send"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="onBtnClick"
+                    android:text="@string/clearSendBuf"
+                    android:textAllCaps="false" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/cb_isFileSend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text="@string/filePath" />
+            <TextView
+                android:id="@+id/tv_filePath"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/filePath"/>
+
+            <EditText
+                android:id="@+id/et_filePath"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:layout_weight="5" />
+
+            <Button
+                android:id="@+id/btn_inputFile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onBtnClick"
+                android:layout_weight="1"
+                android:textAllCaps="false"
+                android:text="@string/fileInput" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_send_receive_bytes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginTop="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/cb_isTimerSend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="500dp"
+                    android:layout_marginRight="50dp"
+                    android:text="@string/isLoopSend" />
+
+                <TextView
+                    android:id="@+id/tv_sendCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/totalCount" />
+
+                <EditText
+                    android:id="@+id/et_sendCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/tv_sendIntervalTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/intervalTime" />
+
+                <EditText
+                    android:id="@+id/et_sendIntervalTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onBtnClick"
+                android:textAllCaps="false"
+                android:text="@string/send" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

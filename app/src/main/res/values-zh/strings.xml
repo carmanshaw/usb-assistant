@@ -1,0 +1,17 @@
+<resources>
+
+    <string name="app_name">UsbAssistant</string>
+    <string name="deviceList">USB设备列表:</string>
+    <string name="connect">连接</string>
+    <string name="disconnect">断开</string>
+    <string name="receiveTxt">文本</string>
+    <string name="clearReceiveBuf">清接收区</string>
+    <string name="clearSendBuf">清发送区</string>
+    <string name="filePath">文件路径:</string>
+    <string name="fileInput">载入文件</string>
+    <string name="isLoopSend">定时</string>
+    <string name="totalCount">总数:</string>
+    <string name="intervalTime">间隔(ms):</string>
+    <string name="send">发送</string>
+    <string name="sending">发送中</string>
+</resources>

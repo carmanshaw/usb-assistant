@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">UsbAssistant</string>
+    <string name="deviceList">Device List:</string>
+    <string name="connect">Connect</string>
+    <string name="disconnect">DisConnect</string>
+    <string name="receiveTxt">Txt</string>
+    <string name="clearReceiveBuf">Clear Receive Buffer</string>
+    <string name="clearSendBuf">Clear Send Buffer</string>
+    <string name="filePath">File Path:</string>
+    <string name="fileInput">Input File</string>
+    <string name="isLoopSend">LoopSend</string>
+    <string name="totalCount">Total:</string>
+    <string name="intervalTime">IntervalTime(ms):</string>
+    <string name="send">Send</string>
+    <string name="sending">Sending</string>
+</resources>
